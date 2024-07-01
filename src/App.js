@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import React, {Component} from 'react'
 import {Route, Switch, Redirect} from 'react-router-dom'
 
 import LoginForm from './components/LoginForm'
@@ -14,7 +14,14 @@ import './App.css'
 
 class App extends Component {
   state = {
-    cartList: [],
+    cartList: JSON.parse(localStorage.getItem('cartList')) || [],
+  }
+
+  componentDidUpdate(prevState) {
+    const {cartList} = this.state
+    if (prevState.cartList !== cartList) {
+      localStorage.setItem('cartList', JSON.stringify(cartList))
+    }
   }
 
   addCartItem = product => {

@@ -27,7 +27,6 @@
   }
 }
 
-
 .nav-bar-mobile-logo-container {
   display: flex;
   justify-content: space-between;
@@ -127,7 +126,7 @@
 .logout-desktop-btn {
   font-family: 'Roboto';
   font-weight: 600;
-  font-size: 10px;
+  font-size: 12px;
   padding: 8px 16px;
   color: #ffffff;
   background-color: #0967d2;
@@ -216,7 +215,7 @@
     color: rgb(0, 128, 92);
     border-radius: 50%;
     padding: 3px 7px;
-    font-size: 15px;
+    font-size: 13px;
     margin-left: 34px;
     font-weight: bold;
     top: 13px;
