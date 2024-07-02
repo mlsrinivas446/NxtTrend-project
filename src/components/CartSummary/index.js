@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import {useState} from 'react'
 import Popup from 'reactjs-popup'
 import {IoMdCheckmarkCircle} from 'react-icons/io'
 import CartContext from '../../context/CartContext'
@@ -41,7 +40,11 @@ const CartSummary = () => {
             </h1>
             <p className="no-of-items">{cartList.length} items in cart</p>
             <Popup
-              trigger={<button className="checkout-button">Checkout</button>}
+              trigger={
+                <button className="checkout-button" type="button">
+                  Checkout
+                </button>
+              }
               modal
             >
               <div className="payment-method-container">
@@ -90,6 +93,7 @@ const CartSummary = () => {
                       trigger={
                         <button
                           className="button confirm-order"
+                          type="button"
                           disabled={
                             selectedPaymentMethod === 'Cash on Delivery'
                           }
@@ -104,11 +108,9 @@ const CartSummary = () => {
                         <p className="success-message">
                           Your order has been placed successfully
                         </p>
-                        <Link to="/products">
-                          <button type="button" className="shop-now-button">
-                            Continue Shopping
-                          </button>
-                        </Link>
+                        <button type="button" className="shop-now-button">
+                          Continue Shopping
+                        </button>
                       </div>
                     </Popup>
                   </div>
